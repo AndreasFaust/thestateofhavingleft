@@ -1,0 +1,207 @@
+
+body {
+	font-family: sans-serif;
+	overflow: hidden;
+	background: $rosa;
+}
+
+.loader {
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	bottom: 0;	
+	width: 100%;		
+	transition: opacity 1s;
+	opacity: 1;
+	background: $rosa;
+	padding: $bodymargin;
+
+	p {
+		text-align: center;
+		padding: 1rem 0 1.5rem;
+	}
+}
+
+.pageload {
+	overflow: visible;
+	.loader {
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+@include min-64 {
+	.loader {
+		p {
+			text-align: left; 
+			@include cols(3);
+			padding: 0 $bodymargin 0 0;
+		}
+	}
+}
+
+
+header {
+	text-align: center;
+	padding: 1rem 0 1.5rem;
+}
+
+.wrapper {
+	padding: $bodymargin;
+	overflow: hidden;
+	position: relative;
+	z-index: 100;
+	background: $rosa;
+}
+
+
+footer {
+	position: fixed;
+	backface-visibility: hidden;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: url('../img/remained_shot_480.gif');
+}
+
+.unfun {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background: $rosa;
+	padding: .5rem 1rem;
+
+	p {
+		font-size: .6rem;
+		letter-spacing: .05rem;
+	}
+	a {
+		color: red;
+	}
+}
+
+.no-touch {
+	.unfun a:hover {
+		color: green;
+	}
+}
+
+@include min-64 {
+	
+	header {
+		text-align: left;
+		padding: 0;
+		@include cols(3);
+		float: left;
+		
+		p {
+			padding-right: $bodymargin;
+		}
+	}
+
+	.arbeiten {
+		@include cols(21);
+	}
+
+}
+
+
+
+.arbeit {
+	position: relative;
+	// z-index: 600;
+
+	video {
+		width: 100%;
+		display: block;
+		opacity: 0;
+		transition: opacity .5s;
+
+		&.inview {
+			opacity: 1;
+		}
+	}
+}
+
+.img-wrapper,
+.video-img {
+	width: 100%;
+	height: 0;
+	background: $rosa;
+	overflow: hidden;
+	position: relative;
+	transition: opacity .5s;
+	opacity: 0;
+
+	img {
+		transition: opacity .5s;
+		width: 100%;		
+		opacity: 0;
+	}
+
+	&.loaded {
+		img {
+			opacity: 1;
+		}
+	}
+
+	&.inview {
+		opacity: 1;
+	}
+
+}
+
+.hide {
+	display: none;
+}
+
+.loading {
+
+	&:before {
+		content:'';
+		display: block;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: .75rem;
+		border-top: 2px solid #333;
+		border-left: 2px solid #333;
+		border-bottom: 2px solid #333;
+    	border-right: 2px solid transparent;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -.75rem 0 0 -.75rem;
+		animation: spinner 2s linear infinite;
+	}
+}
+
+@keyframes spinner {
+	100% {
+		transform: rotate(360deg); 
+	}
+}
+
+
+.caption {
+	position: absolute;
+	z-index: 1;
+	bottom: 1rem;
+	margin-left: 1rem;
+	color: yellow;
+	font-size: 1rem;
+	line-height: 1.2;
+	text-shadow: 0 0 2px #000, 0 0 2px #000, 0 0 2px #000, 0 0 2px #000;
+
+	&.sticky {
+		position: fixed;
+		backface-visibility: hidden;
+	}
+
+}
+
+
+
+
+
