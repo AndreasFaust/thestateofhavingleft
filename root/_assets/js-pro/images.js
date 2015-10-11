@@ -7,9 +7,9 @@
   var imgWrapper = document.getElementsByClassName('img-wrapper');
   var waypoints = [];
 
-  window.addEventListener('load', videoWaypoints, false);
+  window.addEventListener('load', imgWaypoints, false);
 
-  function videoWaypoints() {
+  function imgWaypoints() {
 
     forEach(imgWrapper, function(i, iw) {
 
