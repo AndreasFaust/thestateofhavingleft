@@ -7,19 +7,35 @@
   var imgWrapper = document.getElementsByClassName('img-wrapper');
   var waypoints = [];
 
-  forEach(imgWrapper, function(i, iw) {
+  window.addEventListener('load', videoWaypoints, false);
 
-    waypoints[i] = new Waypoint.Inview({
-      element: iw,
-      enter: function(direction) {
-        enter(this.element);
-      },
-      exited: function(direction) {
-        leave(this.element);
-      }
+  function videoWaypoints() {
+
+    forEach(imgWrapper, function(i, iw) {
+
+      waypoints[i] = new Waypoint.Inview({
+        element: iw,
+        enter: function(direction) {
+          enter(this.element);
+        },
+        exited: function(direction) {
+          leave(this.element);
+        }
+      });
+
     });
 
-  });
+  }
+
+  function enter(elem) {
+    elem.classList.add('inview');
+    if (elem.classList.contains('loaded')) { return; }
+    loadImage(elem);
+  }
+
+  function leave(elem) {
+    elem.classList.remove('inview');
+  }
 
 
   function loadImage (elem) {
@@ -43,18 +59,8 @@
       elem.classList.remove('loading');
       elem.classList.add('loaded');
     });
-
   }
 
-  function enter(elem) {
-    elem.classList.add('inview');
-    if (elem.classList.contains('loaded')) { return; }
-    loadImage(elem);
-  }
-
-  function leave(elem) {
-    elem.classList.remove('inview');
-  }
 
 
 })(window, document);

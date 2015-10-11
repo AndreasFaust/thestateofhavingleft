@@ -50,7 +50,6 @@
       });
 
     });
-
   }
 
   function loadImage (elem) {
@@ -72,6 +71,8 @@
       elem.classList.remove('loading');
       elem.classList.add('loaded');
     });
+
+    Waypoint.refreshAll();
 
   }
 

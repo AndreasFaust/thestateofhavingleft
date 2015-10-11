@@ -79,12 +79,15 @@ function sticky(settings) {
       arbeit.style.zIndex = (al-i)*10;
 
       var caption = arbeit.getElementsByTagName('h1')[0];
-      waypointsAll[i] = sticky({
-        element: arbeit,
-        offset: 0,
-        enterCallback: function() { enterWaypoint(caption); },
-        leaveCallback: function() { leaveWaypoint(caption); }
-      });
+
+      if(caption) {
+        waypointsAll[i] = sticky({
+          element: arbeit,
+          offset: 0,
+          enterCallback: function() { enterWaypoint(caption); },
+          leaveCallback: function() { leaveWaypoint(caption); }
+        });
+      }
 
     });  
   }
