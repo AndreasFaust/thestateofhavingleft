@@ -3,6 +3,13 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        'gh-pages': {
+            options: {
+                base: 'root'
+            },
+            src: ['**']
+        },
+
         sass: {
             dist: {
                 options: {                     
@@ -102,9 +109,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-css');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-gh-pages');
 
     grunt.registerTask('default', ['sass', 'concat', 'watch']);
     grunt.registerTask('finish', ['concat', 'uglify', 'sass', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('github', ['gh-pages']);
 
 
 
