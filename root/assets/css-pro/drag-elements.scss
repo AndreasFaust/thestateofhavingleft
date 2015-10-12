@@ -11,7 +11,17 @@
 		height: 1.5rem;
 	}
 
+	a {
+		color:  #7a9aab;
+	}
+
 }
+
+.no-touch .textbox a:hover,
+.textbox a:active {
+	color: green;
+}
+
 
 .textbox-inner {
 	height: 14.5rem;
