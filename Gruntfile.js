@@ -16,8 +16,8 @@ module.exports = function(grunt) {
                     sourcemap: 'inline'
                 },
                 files: {
-                    'root/_assets/css/main.css':
-                    'root/_assets/css-pro/config.scss'
+                    'root/assets/css/main.css':
+                    'root/assets/css-pro/config.scss'
                 }
 
             } 
@@ -27,46 +27,46 @@ module.exports = function(grunt) {
             js: {
                 src: [
                 // modules / helper
-                    'root/_assets/js-pro/_modules/foreach.js',
-                    'root/_assets/js-pro/_modules/classlist.js',
-                    'root/_assets/js-pro/_modules/transition.js',
-                    'root/_assets/js-pro/_modules/debounce-throttle.js',
-                    'root/_assets/js-pro/_modules/draggabilly.js',
-                    'root/_assets/js-pro/_modules/imagesloaded.js',
-                    'root/_assets/js-pro/_modules/waypoints.js',
-                    'root/_assets/js-pro/_modules/waypoints-inview.js',
-                    'root/_assets/js-pro/_modules/iscroll.js',
+                    'root/assets/js-pro/_modules/foreach.js',
+                    'root/assets/js-pro/_modules/classlist.js',
+                    'root/assets/js-pro/_modules/transition.js',
+                    'root/assets/js-pro/_modules/debounce-throttle.js',
+                    'root/assets/js-pro/_modules/draggabilly.js',
+                    'root/assets/js-pro/_modules/imagesloaded.js',
+                    'root/assets/js-pro/_modules/waypoints.js',
+                    'root/assets/js-pro/_modules/waypoints-inview.js',
+                    'root/assets/js-pro/_modules/iscroll.js',
 
-                    'root/_assets/js-pro/main.js',
-                    'root/_assets/js-pro/images.js',
-                    'root/_assets/js-pro/videos.js',
-                    'root/_assets/js-pro/sticky-headlines.js',
+                    'root/assets/js-pro/main.js',
+                    'root/assets/js-pro/images.js',
+                    'root/assets/js-pro/videos.js',
+                    'root/assets/js-pro/sticky-headlines.js',
 
                 ],
-                dest: 'root/_assets/js/main.js'
+                dest: 'root/assets/js/main.js'
             },
         },
 
         uglify: {
             js: {
-                src: 'root/_assets/js/main.js',
-                dest: 'root/_assets/js/main.js'
+                src: 'root/assets/js/main.js',
+                dest: 'root/assets/js/main.js'
             }
         },
 
         autoprefixer: {
             dist: {
                 files: {
-                    'root/_assets/css/main.css':
-                    'root/_assets/css/main.css'
+                    'root/assets/css/main.css':
+                    'root/assets/css/main.css'
                 }
             }
         },
 
         cssmin: {
             my_target: {
-                src: 'root/_assets/css/main.css',
-                dest: 'root/_assets/css/main.css'
+                src: 'root/assets/css/main.css',
+                dest: 'root/assets/css/main.css'
             }
         },
 
@@ -76,9 +76,9 @@ module.exports = function(grunt) {
             },            
             scripts: {
                 files: [
-                    'root/_assets/js-pro/*.js', 
-                    'root/_assets/js-pro/_modules/*.js', 
-                    'root/_assets/js-pro/_modules-custom/*.js'
+                    'root/assets/js-pro/*.js', 
+                    'root/assets/js-pro/_modules/*.js', 
+                    'root/assets/js-pro/_modules-custom/*.js'
                 ],
                 tasks: ['concat'],
                 options: {
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
                 }
             },
             scss: {
-                files: ['root/_assets/css-pro/*.scss'],
+                files: ['root/assets/css-pro/*.scss'],
                 tasks: ['sass'],
                 options: {
                   spawn: false,
