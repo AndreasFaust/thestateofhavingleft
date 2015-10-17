@@ -49,11 +49,11 @@
   var draggieText;
   var active = false;
 
-  // var scrollbar = new IScroll('#textbox-inner', {
-  //   mouseWheel: true,
-  //   scrollbars: 'custom',
-  //   interactiveScrollbars: true
-  // });
+  var scrollbar = new IScroll('#textbox-inner', {
+    mouseWheel: true,
+    scrollbars: 'custom',
+    interactiveScrollbars: true
+  });
 
   resize();
   var dResize = _.debounce(resize, 250);

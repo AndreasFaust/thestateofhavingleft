@@ -72,7 +72,7 @@
       elem.classList.add('loaded');
     });
 
-    Waypoint.refreshAll();
+    // Waypoint.refreshAll();
 
   }
 
